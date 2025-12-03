@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaflet preview</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H"crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"crossorigin=""></script>
+        <script src="GeoTec.js"></script>
+        <style type="text/css">
+            body {margin: 0;padding: 0;} html, body, #map{width: 100%;height: 100%;}
+        </style>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="map"> 
+        </div>
+        <script>
+            var map = L.map('map', {attributionControl: false}).setView([25.5324, -103.436], 17);
+            L.control.attribution({prefix: false}).addTo(map);
+            var tilesource_layer = L.tileLayer('Teselas ITL Satelital//{z}/{x}/{y}.jpg', {minZoom: 15, maxZoom: 19, tms: false, attribution: 'Stolen by JuanPC'}).addTo(map);
+
+            //Geometria del GEOJSON
+            var infoEdificios = {};
+            
+            fetch('datos.json')
+                .then(response => response.json())
+                .then(data => {
+                    infoEdificios = data;
+                    console.log("exito");
+                })
+                .catch(error => console.error("error", error));
+
+            L.geoJSON(datosTec, {
+                style: function (feature){
+                    return{
+                        color: '#2F29D1',
+                        weight: 0,
+                        fillColor: '#3388FF',
+                        fillOpacity: 0
+                    };
+                },
+                onEachFeature: function (feature, layer){
+                    if(feature.properties.Nombre) {
+                        layer.bindTooltip(feature.properties.Nombre, {
+                            permanent: false,
+                            direction: 'top',
+                            className: 'mi-tooltip-estilo'
+                        });
+                    }
+                    if(feature.properties.id){
+                        var centro = layer.getBounds().getCenter();
+                        var iconoID = L.divIcon({
+                            className: 'label-edificio',
+                            html: feature.properties.id,
+                            iconSize: [24, 24],
+                            iconAnchor : [12,12]
+                        });
+
+                        L.marker(centro, {icon: iconoID, interactive: false}).addTo(map);
+                    }
+
+                    layer.on('click', function(){
+                        var id = feature.properties.id;
+                        var datos = infoEdificios[id];
+
+                        if(datos){
+                            
+                            var imagenesHTML='';
+                            if(datos.imagenes && datos.imagenes.length > 0){
+                                imagenesHTML = '<div class="carousel-container">';
+                                datos.imagenes.forEach(imgUrl => {
+                                    imagenesHTML += `<img src="${imgUrl}">`;
+                                });
+                                imagenesHTML+='</div>';
+                            }
+
+                            var aulasHTML = '';
+                            if (datos.aulas && datos.aulas.length > 0) {
+                                aulasHTML = '<div class="aulas-container">';
+                                datos.aulas.forEach(aula => {
+                                    aulasHTML += `<span class="badge-aula">${aula}</span>`;
+                                });
+                                aulasHTML += '</div>';
+                            }
+
+                            var popupContent = `
+                                <div class="popup-tec">
+                                    <h3>${datos.nombre}</h3>
+                                    ${imagenesHTML}
+                                    <p>${datos.descripcion}</p>
+                                    <strong>Aulas:</strong>
+                                    ${aulasHTML}
+                                </div>
+                            `;
+
+                            layer.bindPopup(popupContent).openPopup();
+                        }else{
+                            layer.bindPopup(`<b>${id}</b><br>Información no disponible`).openPopup();
+                        }
+                    });
+                }
+            }).addTo(map);
+        </script>
+    </body>
+</html>;

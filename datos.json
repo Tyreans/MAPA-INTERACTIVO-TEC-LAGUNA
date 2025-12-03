@@ -1,0 +1,22 @@
+{
+  "5": {
+    "nombre": "Edificio 5",
+    "descripcion": "Edificio principal de ingeniería en algo",
+    "aulas": ["5A", "5B", "5C", "5D", "5E", "5F", "5G", "5H"],
+    "imagenes": [
+      "https://via.placeholder.com/300x150?text=Fachada+Edificio+5",
+      "https://via.placeholder.com/300x150?text=Laboratorio+Redes",
+      "https://via.placeholder.com/300x150?text=Pasillo+Principal"
+    ]
+  },
+  "19": {
+    "nombre": "Edificio 19",
+    "descripcion": "Departamento de Ciencias Basicas, Sistemas y Computacion y Aulas, Edificio principal de ingeniería en sistemas con DiosWi",
+    "aulas": ["19A", "19B", "19C", "19D", "19E", "19F", "19G", "19H"],
+    "imagenes": [
+      "img/19/1.jpg",
+      "img/19/2.jpg",
+      "img/19/3.jpg"
+    ]
+  }
+}
