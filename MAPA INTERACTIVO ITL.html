@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Leaflet preview</title>
+        <title>Mapa Interactivo ITL</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H"crossorigin=""/>
@@ -11,6 +11,7 @@
             body {margin: 0;padding: 0;} html, body, #map{width: 100%;height: 100%;}
         </style>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="img/logo-tecnm.png">
     </head>
     <body>
         <div id="map"> 
@@ -18,7 +19,7 @@
         <script>
             var map = L.map('map', {attributionControl: false}).setView([25.5324, -103.436], 17);
             L.control.attribution({prefix: false}).addTo(map);
-            var tilesource_layer = L.tileLayer('Teselas ITL Satelital//{z}/{x}/{y}.jpg', {minZoom: 15, maxZoom: 19, tms: false, attribution: 'Stolen by JuanPC'}).addTo(map);
+            var tilesource_layer = L.tileLayer('Teselas ITL Satelital//{z}/{x}/{y}.jpg', {minZoom: 15, maxZoom: 19, tms: false, attribution: 'Imagenes extraidas de Google Maps. Mapa disenado por Juan Pablo e informacion de los edificios recolectada por Angel Daniel'}).addTo(map);
 
             //Geometria del GEOJSON
             var infoEdificios = {};
