@@ -119,7 +119,7 @@
   "19": {
     "nombre": "Edificio 19",
     "descripcion": "Edificio principal de Ingeniería en Sistemas Computacionales con DiosWi",
-    "aulas": ["19A", "19B", "19C", "19D", "19E", "19F", "19G", "19H","Aula ASC", "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"],
+    "aulas": ["19A", "19B", "19C", "19D", "19E", "19F", "19G", "19H", "19K","Aula ASC", "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"],
     "imagenes": [
       "img/19/2.jpg",
       "img/19/3.jpg",

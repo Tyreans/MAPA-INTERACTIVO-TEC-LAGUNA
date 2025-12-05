@@ -1,3 +1,14 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #map {
+    width: 100%;
+    height: 100%;
+}
+
 /* Estilo para el círculo blanco con el ID */
 .label-edificio {
     background-color: white;
@@ -15,12 +26,12 @@
 /* Estilo del Popup general */
 .popup-tec {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 260px; /* Ancho fijo para que no se deforme */
+    width: 260px;
 }
 
 .popup-tec h3 {
     margin: 0 0 5px 0;
-    color: #1b3a57; /* Azul Tec */
+    color: #1b3a57;
     font-size: 16px;
     border-bottom: 2px solid #d1d1d1;
     padding-bottom: 5px;
@@ -32,40 +43,29 @@
     margin-bottom: 10px;
 }
 
-/* --- CARRUSEL CSS PURO --- */
+/* Carrusel CSS puro */
 .carousel-container {
     display: flex;
-    overflow-x: auto; /* Permite deslizar */
-    scroll-snap-type: x mandatory; /* Efecto imán */
-    
-    /* Configuración de tamaño */
-    width: 100%; 
-    border-radius: 8px; /* Bordes redondeados */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    border-radius: 8px;
     margin-bottom: 10px;
-    
-    /* Ocultar la barra de scroll fea en navegadores modernos */
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
     scrollbar-color: #ccc transparent;
 }
 
 .carousel-container img {
-    /* 1. OBLIGAR TAMAÑO Y FORMA */
-    flex: 0 0 100%; /* Cada imagen ocupa el 100% del ancho disponible */
+    flex: 0 0 100%;
     width: 100%;
-    
-    /* ESTA ES LA CLAVE PARA 4:3 */
-    aspect-ratio: 4 / 3; 
-    
-    /* 2. RECORTE INTELIGENTE */
-    object-fit: cover; /* Cubre todo el cuadro 4:3 recortando lo que sobre */
-    object-position: center; /* Centra la imagen */
-    
-    /* 3. EFECTOS DE DESPLAZAMIENTO */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
     scroll-snap-align: start;
-    display: block; /* Evita espacios blancos extraños abajo */
+    display: block;
 }
 
-/* --- Estilo de las Aulas (Badges) --- */
+/* Estilo de las Aulas (Badges) */
 .aulas-container {
     display: flex;
     flex-wrap: wrap;
@@ -80,4 +80,126 @@
     font-size: 10px;
     font-weight: bold;
     border: 1px solid #bbdefb;
+}
+
+/* BARRA DE BÚSQUEDA */
+.searchbar-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* En desktop, mover arriba */
+@media (min-width: 768px) {
+    .searchbar-container {
+        top: 20px;
+        bottom: auto;
+    }
+}
+
+.searchbar-input-wrapper {
+    position: relative;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+}
+
+.searchbar-input {
+    flex: 1;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 25px;
+    outline: none;
+}
+
+.searchbar-button {
+    background: #1b3a57;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.searchbar-button:hover {
+    background: #2d5a7f;
+}
+
+/* SUGERENCIAS */
+.searchbar-suggestions {
+    position: absolute;
+    bottom: calc(100% + 5px); /* En móvil, mostrar ARRIBA de la barra */
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.searchbar-suggestions.active {
+    display: block;
+}
+
+/* En desktop, mostrar ABAJO de la barra */
+@media (min-width: 768px) {
+    .searchbar-suggestions {
+        bottom: auto;
+        top: calc(100% + 5px);
+    }
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+    background: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-edificio {
+    font-weight: bold;
+    color: #1b3a57;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.suggestion-aula {
+    font-size: 12px;
+    color: #666;
+    padding-left: 15px;
+}
+
+.highlight {
+    background-color: #ffeb3b;
+    font-weight: bold;
+}
+
+/* Tooltip personalizado */
+.mi-tooltip-estilo {
+    background-color: rgba(27, 58, 87, 0.9);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
