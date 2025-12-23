@@ -1,6 +1,5 @@
-Proyecto sobre la creacio  de un Mapa interactivo para los visitantes y alumnado de nuevo Ingreso.
-Desarrollado por Juan Pablo Chavez Ramirez y Angel Daniel Salinas Ortiz
+### Mapa Interactivo del ITL ###
 
-Viible el progreso en: https://tyreans.github.io/MAPA-INTERACTIVO-TEC-LAGUNA/MAPA%20INTERACTIVO%20ITL.html
+**Desarrollado por Juan Pablo Chavez Ramirez y Angel Daniel Salinas Ortiz**
 
-Todas las imagenes usadas fueron extraidas de Google Maps.
+Mapa enfocado en apoyar a estudiantes de nuevo ingreso y visitantes con la localizacion de las diversas aulas que existen en la institucion. Puede observar nuestro progreso haciendo click [aqui](https://tyreans.github.io/MAPA-INTERACTIVO-TEC-LAGUNA/MAPA%20INTERACTIVO%20ITL.html).
