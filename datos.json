@@ -1,295 +1,503 @@
 {
-  "V1": {
-    "nombre": "Edificio V1",
-    "descripcion": "Departamento de Gestion Tecnologica y Vinculacion",
-    "aulas": ["SERVICIO SOCIAL","RESIDENCIAS(EMPRESAS)"] 
-  },
-
-  "2A": {
-    "nombre": "Edificio 2A",
-    "descripcion": "Edificio Administrativo",
-    "aulas": ["SERVICIOS ESCOLARES","ENFERMERIA","DIVISION DE ESTUDIOS PROFESIONALES","COORDINACIONES DE CARRERA"]
-  },
-
-  "2B": {
-    "nombre": "Edificio 2B",
-    "descripcion": "Edificio Administrativo",
-    "aulas": ["DIRECCION", "SUBDIRECCIONES ACADEMICAS", "ADMINISTRATIVA VINCULACION","CAJA","RECURSOS HUMANOS", "PLANEACION","COMUNICACIÓN"]
-  },
-
-  "3": {
-    "nombre": "Edificio 3",
-    "descripcion": "Delegacion Sindical",
-    "aulas": ["OFICINAS SINDICALES"]
-  },
-
-  "4": {
-    "nombre": "Edificio 4",
-    "descripcion": "Edificio Administrativo",
-    "aulas": ["DEPARTAMENTO ING. INDUSTRIAL, SALA DE MAESTROS ING. INDUSTRIAL"]
-  },
-
-  "5": {
-    "nombre": "Edificio 5",
-    "descripcion": "AULAS ING. INDUSTRIAL",
-    "aulas": ["5A", "5B", "5C", "5D", "5E", "5F", "5G", "5H"],
-    "imagenes": [
-      "img/5/1.jpeg",
-      "img/5/2.jpg"
-    ]
-  },
-
-  "6": {
-    "nombre": "Edificio 6",
-    "descripcion": "AULAS",
-    "aulas": ["6A", "6B", "6C", "6D", "6E", "6F", "6G"]
-    
-  },
-
-  "8": {
-    "nombre": "Edificio 8",
-    "descripcion": "AULAS",
-    "aulas": ["8A", "8B", "8C", "8D", "8E", "8F"]
-  },
-
-  "9": {
-    "nombre": "Edificio 9",
-    "descripcion": "Edificio Administrativo y Aulas",
-    "aulas": ["DEPARTAMENTO CIENCIAS ECONOMICO ADMINISTRATIVAS", "SALA DE MAESTROS ECONOMICO ADMINISTRATIVAS","LAB.COMPUTO","9A", "9B", "9C"]
-  },
-
-  "10": {
-    "nombre": "Edificio 10",
-    "descripcion": "Edificio Administrativo y Aulas",
-    "aulas": ["DEPARTAMENTO INGENIERIA METAL-MECANICA", "SALA DE MAESTROS INGENIERIA METAL-MECANICA","10A", "10B", "10C", "10D", "10E", "10F", "10G"]
-  },
-
-  "11": {
-    "nombre": "Edificio 11",
-    "descripcion": "Laboratorio de Ingenieria Electrica",
-    "aulas": ["LE1", "LE2", "LE3", "LE4","ALE","AL1","AL2","AL3","AL4","AL5","AL6","AAE"]
-  },
-
-  "12": {
-    "nombre": "Edificio 12",
-    "descripcion": "Laboratorio de quimica analitica y organica, oficina psicologo",
-    "aulas": ["LABORATORIO DE QUIMICA ANALITICA","LABORATORIO DE QUIMICA ORGANICA","OFICINA PSICOLOGO"]
-  },
-
-  "13": {
-    "nombre": "Edificio 13",
-    "descripcion": "CAFETERIA",
-    "aulas": ["Cafeteria"]
-  },
-
-  "14": {
-    "nombre": "Edificio 14",
-    "descripcion": "Edificio Administrativo y Aulas",
-    "aulas": ["DEPARTAMENTO QUIMICA BIOQUIMICA", "SALA DE MAESTROS QUIMICA BIOQUIMICA","LABORATORIO DE QUIMICA INORGANICA","LABORATORIO DE FISICO QUIMICA", "14A", "14B"]
-  },
-
-  "15": {
-    "nombre": "Edificio 15",
-    "descripcion": "AULAS",
-    "aulas": ["15A", "15B", "15C", "15D", "15E", "15F", "15G"]
-  },
-
-  "16": {
-    "nombre": "Edificio 16",
-    "descripcion": "Laboratorio de Quimica Cualitativa",
-    "aulas": ["Oficina jefe de laboratorio", "Laboratorio de analisis cuantitativo", "Laboratoio de investigación"]
-  },
-
-  "17": {
-    "nombre": "Edificio 17",
-    "descripcion": "Audiovisual 1 y Centro de Mejora Continua",
-    "aulas": ["Salon Audiovisual 1","Centro de Mejora Continua"]
-  },
-
-   "18": {
-    "nombre": "Edificio 18",
-    "descripcion": "Laboratorio de Ingenieria Quimica y Laboratorio de Ingenieria Mecanica",
-    "aulas": ["Aula Lm1","Aula Lm2","Cuarto de reactivos","Laboratorio de hidrometalurgia","Laboratorio de Pirometalurgia ", "Laboratorio de electrometalurgia", "Aula Activa", "18C", "18D"],
-    "imagenes": [
-      "img/18/1.jpeg",
-      "img/18/2.jpeg"
-    ]
-  },
-
-  "19": {
-    "nombre": "Edificio 19",
-    "descripcion": "Edificio principal de Ingeniería en Sistemas Computacionales con DiosWi",
-    "aulas": ["19A", "19B", "19C", "19D", "19E", "19F", "19G", "19H", "19K","Aula ASC", "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"],
-    "imagenes": [
-      "img/19/2.jpg",
-      "img/19/3.jpg",
-      "img/19/4.jpg"
-    ]
-  },
-
-  "20": {
-    "nombre": "Edificio 20",
-    "descripcion": "Laboratorio de Ingenieria Electronica",
-    "aulas": ["LA3", "LA4"]
-  },
-
-  "21": {
-    "nombre": "Edificio 21",
-    "descripcion": "Laboratorio de Mecanica Aplicada y Laboratorio de Calidad",
-    "aulas": ["MM1", "MM2", "MM3", "MM4","MM5","MM6","MM7","MM8","MM9","MM10","MMA","MMB","MMC"]
-  },
-
-  "22": {
-    "nombre": "Edificio 22",
-    "descripcion": "Edificio de Ciencias Basicas, Laboratorios y prefectura",
-    "aulas": ["LMF", "LECAD", "CB1", "CB2","CB3"]
-  },
-
-  "23": {
-    "nombre": "Edificio 23",
-    "descripcion": "Comedor Estudiantil, Laboratorios, Sala de Usos Multiples",
-    "aulas": ["Comedor Estudiantil","LIM","CIM","LCI","ALI","Sala de usos Multiples", "Bodega de Servicios Escolares"]
-  },
-
-  "24": {
-    "nombre": "Edificio 24",
-    "descripcion": "Obras",
-    "aulas": ["Subestacion Principal"]
-  },
-
-  "25": {
-    "nombre": "Edificio 25",
-    "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "aulas": ["Biblioteca"]
-  },
-
-  "26": {
-    "nombre": "Edificio 26",
-    "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "aulas": ["Centro de Cómputo"]
-  },
-
-  "27": {
-    "nombre": "Edificio 27",
-    "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "aulas": ["Auditorio"]
-  },
-
-  "28": {
-    "nombre": "Edificio 28",
-    "descripcion": "Laboratorio de Computo",
-    "aulas": ["AA-1", "AA-2", "AA-3", "AA-4","AA-5","AA-6","AA-7","MIR"]
-  },
-
-  "29": {
-    "nombre": "Edificio 29",
-    "descripcion": "Laboratorio de Idiomas",
-    "aulas": ["SALONES HARMON HALL"]
-  },
-
-  "30": {
-    "nombre": "Edificio 30",
-    "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "aulas": ["Sala de Consulta","Sala de Lectura","Sala de Juntas","Sala de Computo"]
-  },
-
-  "31": {
-    "nombre": "Edificio 31",
-    "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "aulas": ["Sala de Videoconferencias","Sala de Proyecciones","Sala de Capacitación"]
-  },
-
-  "32": {
-    "nombre": "Edificio 32",
-    "descripcion": "AULAS",
-    "aulas": ["32A","32B","32C","32D","32E","32F"]
-  },
-
-  "33": {
-    "nombre": "Edificio 33",
-    "descripcion": "Salon Audiovisual 2 y Laboratorio de Fisica",
-    "aulas": ["Salon Audiovisual 2","Laboratorio de Fisica"]
-  },
-
-  "34": {
-    "nombre": "Edificio 34",
-    "descripcion": "AULAS",
-    "aulas": ["LC1", "LC2", "LC3", "LC4","LC5","LC6","LC7","LC8","LC9","LCA","LCB"]
-  },
-
-  "35": {
-    "nombre": "Edificio 35",
-    "descripcion": "Recursos Materiales y Servicios",
-    "aulas": ["Amacen de trabajadores", "Departamento de recursos materiales","Servicios"]
-  },
-
-  "36": {
-    "nombre": "Edificio 36",
-    "descripcion": "Departamento Electrica-Electronica",
-    "aulas": ["DEPARTAMENTO DE INGENIERIA ELECTRICA-ELECTRÓNICA"]
-  },
-
-  "37": {
-    "nombre": "Edificio 37",
-    "descripcion": "AULAS",
-    "aulas": ["37A","37B","37C","37D","37E","37F","37G","37H"]
-  },
-
-  "38": {
-    "nombre": "Edificio 38",
-    "descripcion": "AULAS",
-    "aulas": ["38A","38B","38C","38D","38E","38F","38G","38H"]
-  },
-
-  "39": {
-    "nombre": "Edificio 39",
-    "descripcion": "GIMNASIO",
-    "aulas": ["GYM"]
-  },
-
-  "40": {
-    "nombre": "GRADAS DEPORTIVAS",
-    "descripcion": "GRADAS",
-    "aulas": ["GRADAS DEPORTIVAS"]
-  },
-
-"41": {
-    "nombre": "Vestidores",
-    "descripcion": "Vestidores, salones de arte y cultura,gimnasio pesas ",
-    "aulas": ["Vestidarores","Salon de arte y cultura","gimnasio de pesas"]
-  },
-
-
-"D1": {
-    "nombre": "Edificio D1",
-    "descripcion": "CAMPO DE FUTBOL Y FUTBOL AMERICANO",
-    "aulas": ["CAMPO DE FUTBOL Y FUTBOL AMERICANO"]
-  },
-
-
-"D2": {
-    "nombre": "Edificio D2",
-    "descripcion": "CANCHITAS DEPORTIVS",
-    "aulas": ["CANCHAS DE FUTBOL Y BASQUETBOL"]
-  },
-
-
-"D3": {
-    "nombre": "Edificio D3",
-    "descripcion": "Pista de natacion",
-    "aulas": ["Alberca Tec Laguna"]
-  },
-
-"D4": {
-    "nombre": "Edificio D4",
-    "descripcion": "Kiosko",
-    "aulas": ["Kiosko tec laguna"]
-  },
-
-"D5": {
-    "nombre": "Edificio D5",
-    "descripcion": "Gimnasio y auditorio",
-    "aulas": ["GIMNASIO"]
-  }
+    "V1": {
+        "nombre": "Edificio V1",
+        "descripcion": "Departamento de Gestion Tecnologica y Vinculacion",
+        "aulas": [
+            "SERVICIO SOCIAL",
+            "RESIDENCIAS(EMPRESAS)"
+        ]
+    },
+    "1": {
+        "nombre": "Edificio 1",
+        "descripcion": "Edificio Administrativo",
+        "aulas": [
+            "SERVICIOS ESCOLARES",
+            "ENFERMERIA",
+            "DIVISION DE ESTUDIOS PROFESIONALES",
+            "COORDINACIONES DE CARRERA"
+        ]
+    },
+    "2": {
+        "nombre": "Edificio 2",
+        "descripcion": "Edificio Administrativo",
+        "aulas": [
+            "DIRECCION",
+            "SUBDIRECCIONES ACADEMICAS",
+            "ADMINISTRATIVA VINCULACION",
+            "CAJA",
+            "RECURSOS HUMANOS",
+            "PLANEACION",
+            "COMUNICACIÓN"
+        ]
+    },
+    "3": {
+        "nombre": "Edificio 3",
+        "descripcion": "Delegacion Sindical",
+        "aulas": [
+            "OFICINAS SINDICALES"
+        ]
+    },
+    "4": {
+        "nombre": "Edificio 4",
+        "descripcion": "Edificio Administrativo",
+        "aulas": [
+            "DEPARTAMENTO ING. INDUSTRIAL, SALA DE MAESTROS ING. INDUSTRIAL"
+        ]
+    },
+    "5": {
+        "nombre": "Edificio 5",
+        "descripcion": "AULAS ING. INDUSTRIAL",
+        "imagen": "",
+        "aulas": [
+            "5A",
+            "5B",
+            "5C",
+            "5D",
+            "5E",
+            "5F",
+            "5G",
+            "5H",
+            "5prueba"
+        ]
+    },
+    "6": {
+        "nombre": "Edificio 6",
+        "descripcion": "AULAS",
+        "aulas": [
+            "6A",
+            "6B",
+            "6C",
+            "6D",
+            "6E",
+            "6F",
+            "6G"
+        ]
+    },
+    "7": {
+        "nombre": "Edificio 7",
+        "descripcion": "AULAS",
+        "aulas": [
+            "7A",
+            "7B",
+            "7C",
+            "7D",
+            "7E",
+            "7f",
+            "7G"
+        ]
+    },
+    "8": {
+        "nombre": "Edificio 8",
+        "descripcion": "AULAS",
+        "aulas": [
+            "8A",
+            "8B",
+            "8C",
+            "8D",
+            "8E",
+            "8F"
+        ]
+    },
+    "9": {
+        "nombre": "Edificio 9",
+        "descripcion": "Edificio Administrativo y Aulas",
+        "aulas": [
+            "DEPARTAMENTO CIENCIAS ECONOMICO ADMINISTRATIVAS",
+            "SALA DE MAESTROS ECONOMICO ADMINISTRATIVAS",
+            "LAB.COMPUTO",
+            "9A",
+            "9B",
+            "9C"
+        ]
+    },
+    "10": {
+        "nombre": "Edificio 10",
+        "descripcion": "Edificio Administrativo y Aulas",
+        "aulas": [
+            "DEPARTAMENTO INGENIERIA METAL-MECANICA",
+            "SALA DE MAESTROS INGENIERIA METAL-MECANICA",
+            "10A",
+            "10B",
+            "10C",
+            "10D",
+            "10E",
+            "10F",
+            "10G"
+        ]
+    },
+    "11": {
+        "nombre": "Edificio 11",
+        "descripcion": "Laboratorio de Ingenieria Electrica",
+        "aulas": [
+            "LE1",
+            "LE2",
+            "LE3",
+            "LE4",
+            "ALE",
+            "AL1",
+            "AL2",
+            "AL3",
+            "AL4",
+            "AL5",
+            "AL6",
+            "AAE"
+        ]
+    },
+    "12": {
+        "nombre": "Edificio 12",
+        "descripcion": "Laboratorio de quimica analitica y organica, oficina psicologo",
+        "aulas": [
+            "LABORATORIO DE QUIMICA ANALITICA",
+            "LABORATORIO DE QUIMICA ORGANICA",
+            "OFICINA PSICOLOGO"
+        ]
+    },
+    "13": {
+        "nombre": "Edificio 13",
+        "descripcion": "CAFETERIA",
+        "aulas": [
+            "Cafeteria"
+        ]
+    },
+    "14": {
+        "nombre": "Edificio 14",
+        "descripcion": "Edificio Administrativo y Aulas",
+        "aulas": [
+            "DEPARTAMENTO QUIMICA BIOQUIMICA",
+            "SALA DE MAESTROS QUIMICA BIOQUIMICA",
+            "LABORATORIO DE QUIMICA INORGANICA",
+            "LABORATORIO DE FISICO QUIMICA",
+            "14A",
+            "14B"
+        ]
+    },
+    "15": {
+        "nombre": "Edificio 15",
+        "descripcion": "AULAS",
+        "aulas": [
+            "15A",
+            "15B",
+            "15C",
+            "15D",
+            "15E",
+            "15F",
+            "15G"
+        ]
+    },
+    "16": {
+        "nombre": "Edificio 16",
+        "descripcion": "Laboratorio de Quimica Cualitativa",
+        "aulas": [
+            "Oficina jefe de laboratorio",
+            "Laboratorio de analisis cuantitativo",
+            "Laboratoio de investigación"
+        ]
+    },
+    "17": {
+        "nombre": "Edificio 17",
+        "descripcion": "Audiovisual 1 y Centro de Mejora Continua",
+        "aulas": [
+            "Salon Audiovisual 1",
+            "Centro de Mejora Continua"
+        ]
+    },
+    "18": {
+        "nombre": "Edificio 18",
+        "descripcion": "Laboratorio de Ingenieria Quimica y Laboratorio de Ingenieria Mecanica",
+        "aulas": [
+            "Aula Lm1",
+            "Aula Lm2",
+            "Cuarto de reactivos",
+            "Laboratorio de hidrometalurgia",
+            "Laboratorio de Pirometalurgia ",
+            "Laboratorio de electrometalurgia",
+            "Aula Activa",
+            "18C",
+            "18D"
+        ],
+        "imagenes": [
+            "\/img\/18\/1.jpeg",
+            "\/img\/18\/2.jpeg"
+        ]
+    },
+    "19": {
+        "nombre": "Edificio 19",
+        "descripcion": "Edificio principal de Ingeniería en Sistemas Computacionales con DiosWi",
+        "aulas": [
+            "19A",
+            "19B",
+            "19C",
+            "19D",
+            "19E",
+            "19F",
+            "19G",
+            "19H",
+            "Aula ASC",
+            "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"
+        ],
+        "imagenes": [
+            "\/img\/19\/2.jpg",
+            "\/img\/19\/3.jpg",
+            "\/img\/19\/4.jpg",
+            "\/img\/19\/5.jpeg"
+        ]
+    },
+    "20": {
+        "nombre": "Edificio 20",
+        "descripcion": "Laboratorio de Ingenieria Electronica",
+        "aulas": [
+            "LA3",
+            "LA4"
+        ]
+    },
+    "21": {
+        "nombre": "Edificio 21",
+        "descripcion": "Laboratorio de Mecanica Aplicada y Laboratorio de Calidad",
+        "aulas": [
+            "MM1",
+            "MM2",
+            "MM3",
+            "MM4",
+            "MM5",
+            "MM6",
+            "MM7",
+            "MM8",
+            "MM9",
+            "MM10",
+            "MMA",
+            "MMB",
+            "MMC"
+        ]
+    },
+    "22": {
+        "nombre": "Edificio 22",
+        "descripcion": "Edificio de Ciencias Basicas, Laboratorios y prefectura",
+        "aulas": [
+            "LMF",
+            "LECAD",
+            "CB1",
+            "CB2",
+            "CB3"
+        ]
+    },
+    "23": {
+        "nombre": "Edificio 23",
+        "descripcion": "Comedor Estudiantil, Laboratorios, Sala de Usos Multiples",
+        "aulas": [
+            "Comedor Estudiantil",
+            "LIM",
+            "CIM",
+            "LCI",
+            "ALI",
+            "Sala de usos Multiples",
+            "Bodega de Servicios Escolares"
+        ]
+    },
+    "24": {
+        "nombre": "Edificio 24",
+        "descripcion": "Obras",
+        "aulas": [
+            "Subestacion Principal"
+        ]
+    },
+    "25": {
+        "nombre": "Edificio 25",
+        "descripcion": "posgrado ",
+        "aulas": [
+            "Biblioteca"
+        ]
+    },
+    "26": {
+        "nombre": "Edificio 26",
+        "descripcion": "edificio posgrado (falta meter aulas)",
+        "aulas": [
+            "Centro de Cómputo"
+        ]
+    },
+    "27": {
+        "nombre": "Edificio 27",
+        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "aulas": [
+            "Auditorio"
+        ]
+    },
+    "28": {
+        "nombre": "Edificio 28",
+        "descripcion": "Laboratorio de Computo",
+        "aulas": [
+            "AA-1",
+            "AA-2",
+            "AA-3",
+            "AA-4",
+            "AA-5",
+            "AA-6",
+            "AA-7",
+            "MIR"
+        ]
+    },
+    "29": {
+        "nombre": "Edificio 29",
+        "descripcion": "Laboratorio de Idiomas",
+        "aulas": [
+            "SALONES HARMON HALL"
+        ]
+    },
+    "30": {
+        "nombre": "Edificio 30",
+        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "aulas": [
+            "Sala de Consulta",
+            "Sala de Lectura",
+            "Sala de Juntas",
+            "Sala de Computo"
+        ]
+    },
+    "31": {
+        "nombre": "Edificio 31",
+        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "aulas": [
+            "Sala de Videoconferencias",
+            "Sala de Proyecciones",
+            "Sala de Capacitación"
+        ]
+    },
+    "32": {
+        "nombre": "Edificio 32",
+        "descripcion": "AULAS",
+        "aulas": [
+            "32A",
+            "32B",
+            "32C",
+            "32D",
+            "32E",
+            "32F"
+        ]
+    },
+    "33": {
+        "nombre": "Edificio 33",
+        "descripcion": "Salon Audiovisual 2 y Laboratorio de Fisica",
+        "aulas": [
+            "Salon Audiovisual 2",
+            "Laboratorio de Fisica"
+        ]
+    },
+    "34": {
+        "nombre": "Edificio 34",
+        "descripcion": "AULAS",
+        "aulas": [
+            "LC1",
+            "LC2",
+            "LC3",
+            "LC4",
+            "LC5",
+            "LC6",
+            "LC7",
+            "LC8",
+            "LC9",
+            "LCA",
+            "LCB"
+        ]
+    },
+    "35": {
+        "nombre": "Edificio 35",
+        "descripcion": "Recursos Materiales y Servicios",
+        "aulas": [
+            "Amacen de trabajadores",
+            "Departamento de recursos materiales",
+            "Servicios"
+        ]
+    },
+    "36": {
+        "nombre": "Edificio 36",
+        "descripcion": "Departamento Electrica-Electronica",
+        "aulas": [
+            "DEPARTAMENTO DE INGENIERIA ELECTRICA-ELECTRÓNICA"
+        ]
+    },
+    "37": {
+        "nombre": "Edificio 37",
+        "descripcion": "AULAS",
+        "aulas": [
+            "37A",
+            "37B",
+            "37C",
+            "37D",
+            "37E",
+            "37F",
+            "37G",
+            "37H"
+        ]
+    },
+    "38": {
+        "nombre": "Edificio 38",
+        "descripcion": "AULAS",
+        "aulas": [
+            "38A",
+            "38B",
+            "38C",
+            "38D",
+            "38E",
+            "38F",
+            "38G",
+            "38H"
+        ]
+    },
+    "39": {
+        "nombre": "Edificio 39",
+        "descripcion": "GIMNASIO",
+        "aulas": [
+            "GYM"
+        ]
+    },
+    "40": {
+        "nombre": "GRADAS DEPORTIVAS",
+        "descripcion": "GRADAS",
+        "aulas": [
+            "GRADAS DEPORTIVAS"
+        ]
+    },
+    "41": {
+        "nombre": "Vestidores",
+        "descripcion": "Vestidores, salones de arte y cultura,gimnasio pesas ",
+        "aulas": [
+            "Vestidarores",
+            "Salon de arte y cultura",
+            "gimnasio de pesas"
+        ]
+    },
+    "D1": {
+        "nombre": "Edificio D1",
+        "descripcion": "CAMPO DE FUTBOL Y FUTBOL AMERICANO",
+        "aulas": [
+            "CAMPO DE FUTBOL Y FUTBOL AMERICANO"
+        ]
+    },
+    "D2": {
+        "nombre": "Edificio D2",
+        "descripcion": "CANCHITAS DEPORTIVS",
+        "aulas": [
+            "CANCHAS DE FUTBOL Y BASQUETBOL"
+        ]
+    },
+    "D3": {
+        "nombre": "Edificio D3",
+        "descripcion": "Pista de natacion",
+        "aulas": [
+            "Alberca Tec Laguna"
+        ]
+    },
+    "D4": {
+        "nombre": "Edificio D4",
+        "descripcion": "Kiosko",
+        "aulas": [
+            "Kiosko tec laguna"
+        ]
+    },
+    "D5": {
+        "nombre": "Edificio D5",
+        "descripcion": "Gimnasio y auditorio",
+        "aulas": [
+            "GIMNASIO"
+        ]
+    }
 }
-
