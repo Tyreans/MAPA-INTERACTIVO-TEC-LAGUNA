@@ -216,8 +216,8 @@
             "18D"
         ],
         "imagenes": [
-            "\/img\/18\/1.jpeg",
-            "\/img\/18\/2.jpeg"
+            "img/18/1.jpeg",
+            "/img/18/2.jpeg"
         ]
     },
     "19": {
@@ -236,9 +236,9 @@
             "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"
         ],
         "imagenes": [
-            "/img/19/2.jpg",
-            "/img/19/3.jpg",
-            "/img/19/4.jpg"
+            "img/19/2.jpg",
+            "img/19/3.jpg",
+            "img/19/4.jpg"
         ]
     },
     "20": {
