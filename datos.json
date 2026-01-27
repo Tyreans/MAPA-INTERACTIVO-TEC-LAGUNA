@@ -1,5 +1,5 @@
 {
-    "V1": {
+    "2": {
         "nombre": "Edificio V1",
         "descripcion": "Departamento de Gestion Tecnologica y Vinculacion",
         "aulas": [
@@ -7,7 +7,7 @@
             "RESIDENCIAS(EMPRESAS)"
         ]
     },
-    "1": {
+    "1A": {
         "nombre": "Edificio 1",
         "descripcion": "Edificio Administrativo",
         "aulas": [
@@ -17,7 +17,7 @@
             "COORDINACIONES DE CARRERA"
         ]
     },
-    "2": {
+    "2B": {
         "nombre": "Edificio 2",
         "descripcion": "Edificio Administrativo",
         "aulas": [
@@ -236,10 +236,9 @@
             "DEPARTAMENTO INGENIERIA EN SISTEMAS COMPUTACIONALES"
         ],
         "imagenes": [
-            "\/img\/19\/2.jpg",
-            "\/img\/19\/3.jpg",
-            "\/img\/19\/4.jpg",
-            "\/img\/19\/5.jpeg"
+            "/img/19/2.jpg",
+            "/img/19/3.jpg",
+            "/img/19/4.jpg"
         ]
     },
     "20": {
