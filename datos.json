@@ -1,6 +1,6 @@
 {
     "2": {
-        "nombre": "Edificio V1",
+        "nombre": "Vinculacion",
         "descripcion": "Departamento de Gestion Tecnologica y Vinculacion",
         "aulas": [
             "SERVICIO SOCIAL",
@@ -8,7 +8,7 @@
         ]
     },
     "1A": {
-        "nombre": "Edificio 1",
+        "nombre": "Edificio 1A",
         "descripcion": "Edificio Administrativo",
         "aulas": [
             "SERVICIOS ESCOLARES",
@@ -18,7 +18,7 @@
         ]
     },
     "2B": {
-        "nombre": "Edificio 2",
+        "nombre": "Edificio 1B",
         "descripcion": "Edificio Administrativo",
         "aulas": [
             "DIRECCION",
