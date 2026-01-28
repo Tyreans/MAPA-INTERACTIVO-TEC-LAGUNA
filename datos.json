@@ -17,7 +17,7 @@
             "COORDINACIONES DE CARRERA"
         ]
     },
-    "2B": {
+    "1B": {
         "nombre": "Edificio 1B",
         "descripcion": "Edificio Administrativo",
         "aulas": [
@@ -56,8 +56,7 @@
             "5E",
             "5F",
             "5G",
-            "5H",
-            "5prueba"
+            "5H"
         ]
     },
     "6": {
@@ -493,10 +492,18 @@
         ]
     },
     "D5": {
-        "nombre": "Edificio D5",
+        "nombre": "Auditorio",
         "descripcion": "Gimnasio y auditorio",
         "aulas": [
-            "GIMNASIO"
+            "Gimnasio",
+            "Actividades Extraescolares"
+        ]
+    },
+    "D6": {
+        "nombre": "Campo de Beisbol",
+        "descripcion": "Campo de Beisbol",
+        "aulas": [
+            "Baseball"
         ]
     }
 }
