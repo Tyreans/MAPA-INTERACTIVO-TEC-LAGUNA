@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    color: #6a6f8c;
+    background: #f1f1f1;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+*, :after, :before { box-sizing: border-box; }
+
+/* Contenedor principal */
+.login-wrap {
+    width: 100%;
+    margin: 50px auto; /* Centrado un poco más arriba */
+    max-width: 525px;
+    min-height: 520px; /* Ajustado al contenido actual */
+    position: relative;
+    background: url('../img/login.jpg') no-repeat center;
+    background-size: 150%;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(40,57,101,.9);
+}
+
+/* Manejo de Tabs */
+.login-html .sign-in {
+    display: none;
+}
+
+.login-html .tab {
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+/* Cuando el radio está seleccionado, ilumina el tab */
+.login-html .sign-in:checked + .tab {
+    color: #fff;
+    border-color: #1161ee;
+}
+
+/* Formulario */
+.login-form {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    margin-top: 30px;
+}
+
+/* Mostrar el formulario de sign-in por defecto o al marcar el radio */
+.login-html .sign-in-htm {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(0); /* Cambiado de 180 a 0 para que sea visible */
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+
+.login-form .group {
+    margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+    outline: none;
+}
+
+.login-form .group .label {
+    color: #aaa;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.login-form .group .button {
+    background: #1161ee;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.login-form .group .button:hover {
+    background: #0e4ebc;
+}
+
+.login-form .group .input[data-type="password"] {
+    -webkit-text-security: circle;
+}
+
+/* Disenio basado en Day 001 Login Form de Mohan Khadka
+https://codepen.io/khadkamhn/pen/ZGvPLo */
