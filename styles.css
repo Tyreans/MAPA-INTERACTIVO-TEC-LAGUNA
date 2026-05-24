@@ -203,3 +203,267 @@ html, body, #map {
     padding: 5px 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+
+/* Controles de ubicación */
+.location-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.location-button {
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.location-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.location-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* PANEL DE PUERTAS DE ACCESO (Esquina inferior izquierda) */
+.doors-panel-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.doors-panel-title {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #1b3a57;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.doors-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1.5px solid #d1d1d1;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.doors-select:hover {
+    border-color: #1b3a57;
+    box-shadow: 0 0 4px rgba(27, 58, 87, 0.2);
+}
+
+.doors-select:focus {
+    border-color: #1565c0;
+}
+
+/* En móviles, para evitar colisiones con la barra de búsqueda que está en bottom */
+@media (max-width: 768px) {
+    .doors-panel-container {
+        bottom: 85px; /* Sube para quedar por encima de la barra */
+        left: 5%;
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+
+/* BOTÓN "CÓMO LLEGAR" EN POPUP */
+.como-llegar-btn {
+    width: 100%;
+    background: #1b3a57;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+}
+
+.como-llegar-btn:hover {
+    background: #2d5a7f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+}
+
+.como-llegar-btn:active {
+    transform: translateY(0);
+}
+
+/* PANEL FLOTANTE DE INFORMACIÓN DE NAVEGACIÓN ACTIVA */
+.navigation-info-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(27, 58, 87, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 14px;
+    padding: 16px;
+    width: 280px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navigation-info-panel.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.nav-info-header {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+}
+
+.nav-info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.nav-info-item {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-info-item strong {
+    color: #ccc;
+}
+
+.nav-info-item span {
+    font-weight: 500;
+    text-align: right;
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-dist {
+    font-size: 14px;
+    color: #4CAF50;
+    font-weight: bold !important;
+}
+
+#clear-route-btn {
+    width: 100%;
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+#clear-route-btn:hover {
+    background: #d32f2f;
+}
+
+/* En móviles, mostrar el panel arriba */
+@media (max-width: 768px) {
+    .navigation-info-panel {
+        top: 20px;
+        bottom: auto;
+        left: 5%;
+        right: auto;
+        width: 90%;
+        box-sizing: border-box;
+        transform: translateY(-150%);
+    }
+    .navigation-info-panel.active {
+        transform: translateY(0);
+    }
+}
+
+/* ANIMACIÓN PARA LA RUTA */
+@keyframes routeFlow {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.animated-route-line {
+    animation: routeFlow 1.2s linear infinite;
+}
+
+/* MARCADORES PERSONALIZADOS */
+.beacon-marker div {
+    animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(0, 0, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0);
+    }
+}
+
+.route-point-start div {
+    animation: pulseStart 2.5s infinite;
+}
+
+@keyframes pulseStart {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
