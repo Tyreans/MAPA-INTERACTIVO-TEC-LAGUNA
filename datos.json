@@ -47,7 +47,6 @@
     "5": {
         "nombre": "Edificio 5",
         "descripcion": "AULAS ING. INDUSTRIAL",
-        "imagen": "",
         "aulas": [
             "5A",
             "5B",
@@ -57,6 +56,9 @@
             "5F",
             "5G",
             "5H"
+        ],
+        "imagenes": [
+            "img/5/2.jpg"
         ]
     },
     "6": {
@@ -300,23 +302,23 @@
     },
     "25": {
         "nombre": "Edificio 25",
-        "descripcion": "posgrado ",
+        "descripcion": "Edificio de posgrado",
         "aulas": [
-            "Biblioteca"
+            "Cosas de posgrado"
         ]
     },
     "26": {
         "nombre": "Edificio 26",
-        "descripcion": "edificio posgrado (falta meter aulas)",
+        "descripcion": "Edificio de posgrado",
         "aulas": [
-            "Centro de Cómputo"
+            "Cosas de posgrado"
         ]
     },
     "27": {
         "nombre": "Edificio 27",
-        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "descripcion": "Edificio de posgrado",
         "aulas": [
-            "Auditorio"
+            "Cosas de posgrado"
         ]
     },
     "28": {
@@ -330,7 +332,7 @@
             "AA-5",
             "AA-6",
             "AA-7",
-            "MIR"
+            "MYR"
         ]
     },
     "29": {
@@ -342,21 +344,16 @@
     },
     "30": {
         "nombre": "Edificio 30",
-        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "descripcion": "Edificio de posgrado",
         "aulas": [
-            "Sala de Consulta",
-            "Sala de Lectura",
-            "Sala de Juntas",
-            "Sala de Computo"
+            "Cosas de posgrado"
         ]
     },
     "31": {
         "nombre": "Edificio 31",
-        "descripcion": "NO HAY NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "descripcion": "Edificio de posgrado",
         "aulas": [
-            "Sala de Videoconferencias",
-            "Sala de Proyecciones",
-            "Sala de Capacitación"
+            "Cosas de posgrado"
         ]
     },
     "32": {
@@ -381,19 +378,17 @@
     },
     "34": {
         "nombre": "Edificio 34",
-        "descripcion": "AULAS",
+        "descripcion": "AULAS, CESA y Laboratorio Ing.Energias Renovables",
         "aulas": [
-            "LC1",
-            "LC2",
-            "LC3",
-            "LC4",
-            "LC5",
-            "LC6",
-            "LC7",
-            "LC8",
-            "LC9",
-            "LCA",
-            "LCB"
+            "34A(Laboratorio de Ingenieria en Energias Renovables)",
+            "34B",
+            "34C",
+            "34D",
+            "34E (COMITE EJECUTIVO SOCIEDAD DE ALUMNOS (C.E.S.A.))",
+            "34F"
+        ],
+         "imagenes": [
+            "img/34/1.jpg"
         ]
     },
     "35": {
