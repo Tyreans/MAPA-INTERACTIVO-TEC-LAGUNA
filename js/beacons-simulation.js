@@ -51,7 +51,7 @@ class UbicacionSimulada {
             zIndexOffset: 1000,
             icon: L.divIcon({
                 className: 'simulated-marker',
-                html: `<div style="background:gold; width:16px; height:16px; border-radius:50%; border:2px solid black; box-shadow: 0 0 6px rgba(0,0,0,0.6);"></div>`,
+                html: `<div style="background:red; width:16px; height:16px; border-radius:50%; border:2px solid black; box-shadow: 0 0 6px rgba(0,0,0,0.6);"></div>`,
                 iconSize: [16, 16]
             })
         }).addTo(this.map)
@@ -112,6 +112,8 @@ class SimuladorBeacons {
     // Realizar trilateración a partir de las distancias simuladas
     trilaterar(posicionReal) {
         let distancias = this.obtenerDistanciasSimuladas(posicionReal);
+        // Ordenar por distancia ascendente para usar las 3 balizas más cercanas
+        distancias.sort((a, b) => a.distancia - b.distancia);
         return trilaterar(distancias);
     }
 }

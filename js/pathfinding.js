@@ -30,13 +30,36 @@ function findSnappedNode(lat, lng, existingNodes, toleranceMeters = 2.5) {
     return null;
 }
 
+// ---------- Proyectar punto perpendicularmente sobre un segmento u-v ----------
+function projectPointOnSegment(pLat, pLng, uLat, uLng, vLat, vLng) {
+    const dy = (vLat - uLat) * 111139;
+    const dx = (vLng - uLng) * 111139 * Math.cos(uLat * Math.PI / 180);
+    
+    const py = (pLat - uLat) * 111139;
+    const px = (pLng - uLng) * 111139 * Math.cos(uLat * Math.PI / 180);
+    
+    const lenSq = dx*dx + dy*dy;
+    if (lenSq === 0) return { dist: distanciaMetros(pLat, pLng, uLat, uLng), t: 0 };
+    
+    let t = (px * dx + py * dy) / lenSq;
+    t = Math.max(0, Math.min(1, t));
+    
+    const projX = dx * t;
+    const projY = dy * t;
+    const dist = Math.sqrt((px - projX) * (px - projX) + (py - projY) * (py - projY));
+    
+    return { dist, t };
+}
+
 // ---------- Construir Grafo desde caminitos GeoJSON ----------
 function buildGraph(geojsonPaths, snappingToleranceMeters = 2.5) {
     let graph = {};
     let nodeKeysList = []; // Array para almacenar llaves registradas y hacer snapping
-    
+    let rawSegments = [];
+
     if (!geojsonPaths || !geojsonPaths.features) return graph;
 
+    // Paso 1: Extraer segmentos y recolectar vértices iniciales
     geojsonPaths.features.forEach(feature => {
         let geom = feature.geometry;
         if (!geom) return;
@@ -52,39 +75,68 @@ function buildGraph(geojsonPaths, snappingToleranceMeters = 2.5) {
             for (let i = 0; i < coords.length - 1; i++) {
                 let p1 = coords[i];   // [lng, lat]
                 let p2 = coords[i+1]; // [lng, lat]
-
-                let lat1 = p1[1];
-                let lng1 = p1[0];
-                let lat2 = p2[1];
-                let lng2 = p2[0];
-
-                // Snapping a nodos existentes para salvar desalineaciones menores del dibujo manual
-                let key1 = findSnappedNode(lat1, lng1, nodeKeysList, snappingToleranceMeters);
+                
+                rawSegments.push({
+                    lat1: p1[1], lng1: p1[0],
+                    lat2: p2[1], lng2: p2[0]
+                });
+                
+                // Snapping a nodos existentes al recopilar
+                let key1 = findSnappedNode(p1[1], p1[0], nodeKeysList, snappingToleranceMeters);
                 if (!key1) {
-                    key1 = `${lat1.toFixed(6)},${lng1.toFixed(6)}`;
+                    key1 = `${p1[1].toFixed(6)},${p1[0].toFixed(6)}`;
                     nodeKeysList.push(key1);
                 }
-                
-                let key2 = findSnappedNode(lat2, lng2, nodeKeysList, snappingToleranceMeters);
+                let key2 = findSnappedNode(p2[1], p2[0], nodeKeysList, snappingToleranceMeters);
                 if (!key2) {
-                    key2 = `${lat2.toFixed(6)},${lng2.toFixed(6)}`;
+                    key2 = `${p2[1].toFixed(6)},${p2[0].toFixed(6)}`;
                     nodeKeysList.push(key2);
                 }
-
-                if (key1 === key2) continue; // Evita bucles a sí mismo si se snappean al mismo nodo
-
-                // Calcular peso en base a la distancia real de los puntos snappeados
-                let [k1Lat, k1Lng] = key1.split(',').map(Number);
-                let [k2Lat, k2Lng] = key2.split(',').map(Number);
-                let dist = distanciaMetros(k1Lat, k1Lng, k2Lat, k2Lng);
-
-                if (!graph[key1]) graph[key1] = {};
-                if (!graph[key2]) graph[key2] = {};
-
-                graph[key1][key2] = dist;
-                graph[key2][key1] = dist; // grafo bidireccional
             }
         });
+    });
+
+    // Paso 2: Para cada segmento, buscar qué nodos lo tocan y dividirlo
+    rawSegments.forEach(seg => {
+        let uLat = seg.lat1;
+        let uLng = seg.lng1;
+        let vLat = seg.lat2;
+        let vLng = seg.lng2;
+        
+        let splitPoints = [];
+        
+        nodeKeysList.forEach(vKey => {
+            let [vLatVal, vLngVal] = vKey.split(',').map(Number);
+            let proj = projectPointOnSegment(vLatVal, vLngVal, uLat, uLng, vLat, vLng);
+            
+            if (proj.dist <= snappingToleranceMeters) {
+                splitPoints.push({
+                    key: vKey,
+                    t: proj.t
+                });
+            }
+        });
+        
+        // Ordenar los puntos de corte a lo largo del segmento
+        splitPoints.sort((a, b) => a.t - b.t);
+        
+        // Unir puntos de corte adyacentes en el grafo
+        for (let i = 0; i < splitPoints.length - 1; i++) {
+            let k1 = splitPoints[i].key;
+            let k2 = splitPoints[i+1].key;
+            
+            if (k1 === k2) continue;
+            
+            let [lat1, lng1] = k1.split(',').map(Number);
+            let [lat2, lng2] = k2.split(',').map(Number);
+            let dist = distanciaMetros(lat1, lng1, lat2, lng2);
+            
+            if (!graph[k1]) graph[k1] = {};
+            if (!graph[k2]) graph[k2] = {};
+            
+            graph[k1][k2] = dist;
+            graph[k2][k1] = dist;
+        }
     });
 
     return graph;

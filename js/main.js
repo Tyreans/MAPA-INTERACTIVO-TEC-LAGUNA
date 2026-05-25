@@ -45,14 +45,17 @@ var endPointMarker = null;
 
 // Beacons en el campus (se cargan al inicializar si estamos en simulación o como referencia)
 const beaconsData = [
-    new Beacon('Beacon1', 'Beacon Edificio A', 25.535220, -103.43479),
+    new Beacon('Beacon1', 'Beacon Edificio 1', 25.535220, -103.43479),
     new Beacon('Beacon2', 'Beacon Biblioteca', 25.529297, -103.43632),
-    new Beacon('Beacon3', 'Beacon Cafeteria', 25.534200, -103.435504),
+    new Beacon('Beacon3', 'Beacon Cafeteria', 25.534350, -103.435491),
     new Beacon('Beacon4', 'Beacon Computo', 25.532600, -103.436093),
-    new Beacon('Beacon5', 'Beacon Alberca', 25.531000, -103.435500),
-    new Beacon('Beacon6', 'Beacon Gimnasio', 25.530500, -103.435800),
-    new Beacon('Beacon7', 'Beacon Ciencias Basicas', 25.533200, -103.436100),
-    new Beacon('Beacon8', 'Beacon Vinculacion', 25.534900, -103.434300)
+    new Beacon('Beacon5', 'Beacon Alberca', 25.531040, -103.435900),
+    new Beacon('Beacon6', 'Beacon Gimnasio ', 25.530420, -103.435650),
+    new Beacon('Beacon7', 'Beacon Sistemas', 25.533490, -103.436030),
+    new Beacon('Beacon8', 'Beacon Vinculacion', 25.535080, -103.434177),
+    new Beacon('Beacon9', 'Beacon Edificio 23', 25.533124, -103.435130),
+    new Beacon('Beacon10', 'Beacon Edificio 35', 25.532068, -103.435080),
+    new Beacon('Beacon11', 'Beacon Edificio 5', 25.535017, -103.436223)
 ];
 
 // ==========================================
@@ -153,8 +156,8 @@ if (USE_GPS_LOCATION) {
                 window.estimacionMarker.setLatLng([posEstimada.lat, posEstimada.lng]);
             } else {
                 window.estimacionMarker = L.circleMarker([posEstimada.lat, posEstimada.lng], {
-                    color: 'orange',
-                    fillColor: 'gold',
+                    color: 'darkred',
+                    fillColor: 'red',
                     radius: 6,
                     weight: 2,
                     fillOpacity: 0.8
@@ -298,6 +301,25 @@ function centerOnLocation() {
 // ==========================================
 
 function mostrarPopupEdificio(id, layer) {
+    if (["P1", "P2", "P3", "P4", "P5", "P6"].includes(id)) {
+        let doorName = obtenerNombrePuerta(id);
+        layer.bindPopup(`
+            <div class="popup-tec">
+                <h3>${doorName}</h3>
+                <p>Punto de acceso al campus.</p>
+                <div class="popup-actions" style="margin-top: 12px; border-top: 1px solid #ddd; padding-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                    <button class="como-llegar-btn" onclick="seleccionarPuerta('${id}')">
+                        Seleccionar punto de acceso
+                    </button>
+                    <button class="como-llegar-btn" onclick="iniciarRuta('${id}')">
+                        Cómo llegar
+                    </button>
+                </div>
+            </div>
+        `).openPopup();
+        return;
+    }
+
     var datos = infoEdificios[id];
     if (datos) {
         var imagenesHTML = '';
@@ -457,24 +479,22 @@ function calcularRuta(origCoors, destId, origName) {
     map.fitBounds(activeRouteLine.getBounds(), { padding: [60, 60] });
 
     // Actualizar marcadores de inicio y fin de ruta
-    if (startPointMarker) map.removeLayer(startPointMarker);
-    if (endPointMarker) map.removeLayer(endPointMarker);
+    if (startPointMarker) {
+        map.removeLayer(startPointMarker);
+        startPointMarker = null;
+    }
+    if (endPointMarker) {
+        map.removeLayer(endPointMarker);
+        endPointMarker = null;
+    }
 
-    startPointMarker = L.marker([origCoors.lat, origCoors.lng], {
-        icon: L.divIcon({
-            className: 'route-point-start',
-            html: `<div style="background:#4CAF50; width:16px; height:16px; border-radius:50%; border:2px solid white; box-shadow: 0 0 6px rgba(0,0,0,0.4);"></div>`,
-            iconSize: [16, 16]
-        })
-    }).addTo(map).bindTooltip(`Inicio: ${origName}`);
-
-    endPointMarker = L.marker([destCoors.lat, destCoors.lng], {
+    /*endPointMarker = L.marker([destCoors.lat, destCoors.lng], {
         icon: L.divIcon({
             className: 'route-point-end',
             html: `<div style="background:#F44336; width:16px; height:16px; border-radius:50%; border:2px solid white; box-shadow: 0 0 6px rgba(0,0,0,0.4);"></div>`,
             iconSize: [16, 16]
         })
-    }).addTo(map).bindTooltip(`Destino: ${destName}`);
+    }).addTo(map).bindTooltip(`Destino: ${destName}`);*/
 
     // Calcular distancia total de la ruta
     let distanciaTotal = Math.round(calcularDistanciaRuta(path));
@@ -539,6 +559,35 @@ window.limpiarRuta = function () {
 // ==========================================
 // SELECTOR & CENTRADO DE PUERTAS
 // ==========================================
+
+function obtenerNombrePuerta(idPuerta) {
+    let selectEl = document.getElementById('doors-select');
+    if (selectEl) {
+        for (let i = 0; i < selectEl.options.length; i++) {
+            if (selectEl.options[i].value === idPuerta) {
+                return selectEl.options[i].text;
+            }
+        }
+    }
+    const fallbacks = {
+        "P1": "Puerta 1 (Norte - Gestión)",
+        "P2": "Puerta 2 (Norte - Admin)",
+        "P3": "Puerta 3 (Este - Alberca)",
+        "P4": "Puerta 4 (Sur - Gimnasio)",
+        "P5": "Puerta 5 (Sur - Béisbol)",
+        "P6": "Puerta 6 (Oeste - Aulas)"
+    };
+    return fallbacks[idPuerta] || `Puerta ${idPuerta}`;
+}
+
+window.seleccionarPuerta = function (doorId) {
+    let selectEl = document.getElementById('doors-select');
+    if (selectEl) {
+        selectEl.value = doorId;
+        selectEl.dispatchEvent(new Event('change'));
+    }
+    map.closePopup();
+};
 
 function obtenerCentroPuerta(idPuerta) {
     let capa = capasEdificios[idPuerta];

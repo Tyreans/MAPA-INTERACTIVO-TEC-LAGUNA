@@ -293,6 +293,14 @@
             "Bodega de Servicios Escolares"
         ]
     },
+    "23A": {
+        "nombre": "Edificio 23A",
+        "descripcion": "Tunel de paso vehicular y peatonal"
+    },
+    "23B": {
+        "nombre": "Edificio 23B",
+        "descripcion": "Bodega"
+    },
     "24": {
         "nombre": "Edificio 24",
         "descripcion": "Obras",
@@ -450,7 +458,7 @@
         ]
     },
     "41": {
-        "nombre": "Vestidores",
+        "nombre": "Regaderas, Vestidores y Sanitarios",
         "descripcion": "Vestidores, salones de arte y cultura,gimnasio pesas ",
         "aulas": [
             "Vestidarores",
@@ -459,35 +467,35 @@
         ]
     },
     "D1": {
-        "nombre": "Edificio D1",
+        "nombre": "Campo de Futbol y Futbol Americano",
         "descripcion": "CAMPO DE FUTBOL Y FUTBOL AMERICANO",
         "aulas": [
             "CAMPO DE FUTBOL Y FUTBOL AMERICANO"
         ]
     },
     "D2": {
-        "nombre": "Edificio D2",
-        "descripcion": "CANCHITAS DEPORTIVS",
+        "nombre": "Canchas Deportivas",
+        "descripcion": "CANCHITAS DEPORTIVAS",
         "aulas": [
             "CANCHAS DE FUTBOL Y BASQUETBOL"
         ]
     },
     "D3": {
-        "nombre": "Edificio D3",
+        "nombre": "Pista de Natacion",
         "descripcion": "Pista de natacion",
         "aulas": [
             "Alberca Tec Laguna"
         ]
     },
     "D4": {
-        "nombre": "Edificio D4",
+        "nombre": "Kiosko",
         "descripcion": "Kiosko",
         "aulas": [
             "Kiosko tec laguna"
         ]
     },
     "D5": {
-        "nombre": "Auditorio",
+        "nombre": "Gimnasio y Auditorio",
         "descripcion": "Gimnasio y auditorio",
         "aulas": [
             "Gimnasio",
@@ -499,6 +507,13 @@
         "descripcion": "Campo de Beisbol",
         "aulas": [
             "Baseball"
+        ]
+    },
+    "CI": {
+        "nombre": "Centro de Informacion",
+        "descripcion": "Centro de Informacion",
+        "aulas": [
+            "BIBLIOTECA"
         ]
     }
 }
