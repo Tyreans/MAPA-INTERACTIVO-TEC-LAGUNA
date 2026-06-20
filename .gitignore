@@ -1,0 +1,15 @@
+# Mantener la estructura sin mostrar los archivos reales, excepto los .gitkeep para mantener las carpetas vacías
+/media/config/*
+!/media/config/.gitkeep
+/media/Teselas/*
+!/media/Teselas/.gitkeep
+/media/img/*
+!/media/img/.gitkeep
+/media/json/*
+!/media/json/.gitkeep
+
+# Parte de Docker
+!/www/public/json/.gitkeep
+!/www/public/img/.gitkeep
+!/www/public/Teselas/.gitkeep
+!/www/config/.gitkeep
