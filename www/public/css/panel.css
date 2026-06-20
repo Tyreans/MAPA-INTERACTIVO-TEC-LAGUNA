@@ -1,0 +1,236 @@
+/* Variables de diseño del Tec Laguna */
+:root {
+    --primary: #1161ee;
+    --primary-dark: #0e4ebc;
+    --bg-dark: rgba(40, 57, 101, 0.9);
+    --text-muted: #6a6f8c;
+    --bg-light: #f1f1f1;
+    --white: #ffffff;
+    --danger: #dc3545;
+    --shadow: 0 4px 6px rgba(0,0,0,.1);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset y Base */
+*, :after, :before { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--text-muted);
+    background: var(--bg-light);
+    font: 600 16px/1.4 'Open Sans', sans-serif;
+}
+
+/* Estructura Global */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.panel-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Header */
+.admin-header {
+    background: var(--bg-dark);
+    color: var(--white);
+    padding: 20px 30px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.admin-header h1 { margin: 0; font-size: 24px; color: var(--white); }
+
+/* Secciones Comunes */
+.form-section, .edificios-sidebar, .edificios-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+.form-section, .edificios-section { padding: 25px; }
+
+h2 {
+    color: var(--bg-dark);
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Sidebar de Edificios */
+.edificios-sidebar {
+    height: fit-content;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.edificios-sidebar h2 {
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 1;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.edificio-item {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(40,57,101,.1);
+    transition: var(--transition);
+}
+
+.edificio-item:hover { background: rgba(17,97,238,.05); }
+.edificio-item.active {
+    background: rgba(17,97,238,.1);
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+}
+
+/* Formulario, Inputs y Textareas */
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background: rgba(40,57,101,.03);
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+textarea { border-radius: 15px; min-height: 100px; resize: vertical; }
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(17,97,238,.1);
+}
+
+/* Botones Versátiles */
+.btn {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+.btn-danger { background: rgba(220,53,69,.1); color: var(--danger); }
+.btn-danger:hover { background: var(--danger); color: #fff; }
+
+/* Carrusel y Multimedia */
+.carousel {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 15px;
+    background: rgba(40,57,101,.03);
+    border-radius: 10px;
+}
+
+.carousel-item img, .preview-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid rgba(40,57,101,.1);
+    transition: var(--transition);
+}
+
+.carousel-item:hover img { border-color: var(--primary); transform: scale(1.05); }
+
+/* Zona de Carga (Drag & Drop) */
+.upload-zone {
+    border: 3px dashed rgba(40,57,101,.2);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(40,57,101,.02);
+}
+
+.upload-zone:hover { border-color: var(--primary); background: rgba(17,97,238,.05); }
+
+/* Notificaciones */
+.message {
+    padding: 15px 25px;
+    border-radius: 25px;
+    margin: 20px 0;
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+.message.show { display: block; }
+.message.success { background: rgba(40,167,69,.1); color: #28a745; border: 1px solid #28a745; }
+.message.error { background: rgba(220,53,69,.1); color: var(--danger); border: 1px solid var(--danger); }
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } }
+
+/* Responsive */
+@media (max-width: 968px) {
+    .panel-layout { grid-template-columns: 1fr; }
+    .edificios-sidebar { max-height: 300px; }
+    .admin-header { flex-direction: column; text-align: center; gap: 15px; }
+}
+
+/* Posicionamiento de botones de eliminar */
+.carousel-item, .preview-item {
+    position: relative; /* Clave para que el botón no se escape */
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.delete-btn, .remove-preview {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.delete-btn:hover, .remove-preview:hover {
+    background: #c82333;
+    transform: scale(1.1);
+}

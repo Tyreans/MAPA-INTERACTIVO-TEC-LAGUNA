@@ -1,0 +1,21 @@
+{
+  "name": "Mapa Interactivo UNIMAP",
+  "short_name": "UNIMAP",
+  "description": "Mapa interactivo del campus ITL",
+  "start_url": "/mapa.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a365d",
+  "icons": [
+    {
+      "src": "/img/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

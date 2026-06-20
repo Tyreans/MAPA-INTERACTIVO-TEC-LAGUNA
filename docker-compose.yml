@@ -1,0 +1,16 @@
+services:
+  unimap-web:
+    image: php:apache
+    container_name: unimap_pwa
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+      
+      - ./media/img:/var/www/html/public/img
+      - ./media/config:/var/www/html/config
+      - ./media/json:/var/www/html/public/json
+      - ./media/Teselas:/var/www/html/public/Teselas
+    command: >
+      bash -c "a2enmod rewrite && apache2-foreground"
