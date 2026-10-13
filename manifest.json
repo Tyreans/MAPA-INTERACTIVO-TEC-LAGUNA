@@ -1,0 +1,25 @@
+{
+  "name": "Mapa Interactivo UNIMAP - ITL",
+  "short_name": "UNIMAP ITL",
+  "description": "Mapa interactivo y navegación del campus Instituto Tecnológico de La Laguna (ITL)",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#1a365d",
+  "icons": [
+    {
+      "src": "img/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
